@@ -1,0 +1,39 @@
+[System]
+Name='Controlador1'
+Type='mamdani'
+Version=2.0
+NumInputs=1
+NumOutputs=2
+NumRules=1
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='SONAR0'
+Range=[0 5]
+NumMFs=3
+MF1='PEQUEÑA':'trimf',[-2.08 0 1.49]
+MF2='MEDIANA':'trapmf',[1.649 1.751 1.849 1.951]
+MF3='GRANDE':'trimf',[2.98369565217391 5 7.08]
+
+[Output1]
+Name='VELOCIDAD_LINEAL'
+Range=[0 1]
+NumMFs=3
+MF1='PEQUEÑA':'trimf',[-0.423 -0.0053 0.19973544973545]
+MF2='MEDIANA':'trimf',[0.2 0.5 0.802910052910053]
+MF3='GRANDE':'trimf',[0.797619047619048 1 1.42]
+
+[Output2]
+Name='VELOCIDAD_ANGULAR'
+Range=[-1 1]
+NumMFs=3
+MF1='NEGATIVA':'trimf',[-1.833 -1 -0.1667]
+MF2='CERO':'trimf',[-0.8333 0 0.8333]
+MF3='POSITIVA':'trimf',[0.2 1 1]
+
+[Rules]
+2, 0 3 (1) : 1

@@ -1,0 +1,33 @@
+[System]
+Name='sugenoVelocidadObstaculos'
+Type='sugeno'
+Version=2.0
+NumInputs=1
+NumOutputs=1
+NumRules=3
+AndMethod='prod'
+OrMethod='probor'
+ImpMethod='prod'
+AggMethod='sum'
+DefuzzMethod='wtaver'
+
+[Input1]
+Name='input1'
+Range=[-4.39999961853027 5]
+NumMFs=3
+MF1='in1mf1':'trapmf',[-7.68999948501587 -5.80999956130981 -2.98727924207567 -1.08520856072933]
+MF2='in1mf2':'trapmf',[-2.99535581233236 -1.10727876312704 1.70680644668216 3.57378956330745]
+MF3='in1mf3':'trapmf',[1.9045016692062 3.58679425299008 6.40999994277954 8.2899998664856]
+
+[Output1]
+Name='output'
+Range=[0 0.800000011920929]
+NumMFs=3
+MF1='out1mf1':'linear',[-0.050069121637368 0.626594494481342]
+MF2='out1mf2':'linear',[-0.0457068818610499 0.786158973631905]
+MF3='out1mf3':'linear',[-0.0535242049933211 1.06189786559641]
+
+[Rules]
+1, 1 (1) : 1
+2, 2 (1) : 1
+3, 3 (1) : 1
